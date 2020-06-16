@@ -9,7 +9,10 @@ public class TrainUnit : MonoBehaviour
     public GameObject frontBogie;
     public GameObject backBogie;
 
+    public List<GameObject> Wheels = new List<GameObject>();
+
     public GameObject Wagon;
+    public GameObject WagonGfx;
 
     public float frontBogieTravelledDistance;
     public float backBogieTravelledDistance;
@@ -17,7 +20,7 @@ public class TrainUnit : MonoBehaviour
     public float positionInFrontOfLastWagon = 0;
 
     [SerializeField] RailManager m_RailManager = null;
-    [SerializeField] float m_Speed = 1f;
+    public float m_Speed = 1f;
 
     float m_TravelledDistance = 0;
 
@@ -70,5 +73,15 @@ public class TrainUnit : MonoBehaviour
         backBogieTravelledDistance += Time.deltaTime * m_Speed;
 
 
+        //oscilate wagon
+
+        //WagonGfx.transform.Rotate(new Vector3(0,0, 3 * Mathf.Sin(Time.deltaTime*m_Speed)));
+
+        WagonGfx.transform.localRotation = Quaternion.Euler(0, 0, m_Speed /2 * Mathf.Cos(Time.time));
+
+        //WagonGfx.transform.Rotate(new Vector3(0, 0, Mathf.Cos(m_Speed * Time.time)));
+
     }
+
+
 }
