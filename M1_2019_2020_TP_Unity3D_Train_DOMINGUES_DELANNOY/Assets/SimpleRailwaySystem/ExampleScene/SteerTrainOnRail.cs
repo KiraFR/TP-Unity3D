@@ -17,6 +17,8 @@ public class SteerTrainOnRail : MonoBehaviour
         m_Transform = transform;
     }
 
+   
+
     // Update is called once per frame
     void Update()
     {
