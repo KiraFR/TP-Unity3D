@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/SimpleRailwaySystem 3.unity
+- path: Assets/TchouTchou/PrimaryScene.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
